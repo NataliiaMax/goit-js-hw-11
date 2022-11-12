@@ -62,7 +62,7 @@ function showGallery(hits) {
       views,
       comments,
       downloadstags,
-    }) => {
+    }) => 
       `<div class="photo-card">
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="info">
@@ -79,9 +79,9 @@ function showGallery(hits) {
             <b>Downloads${downloadstags}</b>
           </p>
         </div>
-      </div>`;
-    }
-  );
+      </div>`
+    
+  ).join('');
   return markup;
 }
 
