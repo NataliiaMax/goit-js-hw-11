@@ -5,27 +5,23 @@ export default class PixabayApiService {
     this.searchQuery = '';
     this.page = 1;
     this.image = '';
+    // this.card = '';
   }
   async fetchGallery() {
     const response = await axios.get(
-      `https://pixabay.com/api/?key=31223226-3ecae3b2f04fb3bb58e55d840&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40`
+      `https://pixabay.com/api/?key=31223226-3ecae3b2f04fb3bb58e55d840&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`
     );
     const data = response.data;
 
     this.image = data.hits;
-    // .then(response => {
-    //   if (!response.ok) {
-    //     Notiflix.Notify.failure(
-    //       'Sorry, there are no images matching your search query. Please try again.'
-    //     );
-    //     throw new Error(response.status);
-    //   }
-    //   return response.json();
-    // })
-    // .then(data => {
+    // this.card= data.totalHits;
+ 
+
     this.incrementPage();
 
     return this.image;
+
+      
     // return data.hits;
   }
 
