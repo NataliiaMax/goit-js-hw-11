@@ -107,9 +107,11 @@ function appendImages(hits) {
 }
 
 function onloadMore() {
-  newPixabayApiService.fetchGallery().then(hits => { appendImages(hits); lightbox.refresh(); });
+  newPixabayApiService.fetchGallery().then(hits => {
+    appendImages(hits);
+    lightbox.refresh();
+  });
   console.log(newPixabayApiService);
-       
 }
 
 function clearGallery() {
@@ -126,15 +128,3 @@ function clearGallery() {
 //   behavior: 'smooth',
 // });
 // onScroll();
-
-// function createGallery(event) {
-//   event.preventDefault();
-//   // refs.galleryWrapper.insertAdjacentHTML('afterbegin', showGallery(hits));
-//   // newPixabayApiService.fetchGallery().then(appendGallery(hits));
-// }
-
-
-
-// function appendGallery(hits) {
-//   
-// }

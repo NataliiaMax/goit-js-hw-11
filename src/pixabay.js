@@ -13,7 +13,7 @@ export default class PixabayApiService {
     );
     const data = response.data;
 
-    this.image = data.hits;
+    this.image = { data: data.hits, quantity:data.totalHits };
     // this.card= data.totalHits;
  
 
