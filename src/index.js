@@ -57,9 +57,15 @@ function onSubmitForm(ev) {
     console.log(newPixabayApiService);
   }
 
+//   const totalHits = Object.values[quantity];
 
+
+
+  
 function showGallery(hits) {
+
   console.log(hits);
+
   const markup = hits
     .map(
       ({
@@ -94,13 +100,14 @@ function showGallery(hits) {
   return markup;
 }
 
-function appendImages(hits) {
+function appendImages(hits, totalHits) {
+    console.log(totalHits);
     if (hits.length === 0) {
     Notiflix.Notify.info(
       '"Sorry, there are no images matching your search query. Please try again."'
     );
     } else {
-      // Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`);
+      Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`);
     refs.container.insertAdjacentHTML('beforeend', showGallery(hits));
     refs.button.classList.remove('is-visible');
   }

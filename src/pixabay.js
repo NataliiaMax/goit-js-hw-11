@@ -5,7 +5,8 @@ export default class PixabayApiService {
     this.searchQuery = '';
     this.page = 1;
     this.image = '';
-    // this.card = '';
+    this.card = '';
+  
   }
   async fetchGallery() {
     const response = await axios.get(
@@ -13,13 +14,14 @@ export default class PixabayApiService {
     );
     const data = response.data;
 
-    this.image = { data: data.hits, quantity:data.totalHits };
-    // this.card= data.totalHits;
- 
-
+// const newData = { data: data.hits, quantity: data.totalHits };
+    this.image = data.totalHits;
+    this.card = data.hits;
+    // this.card = this.image.data;
+  
     this.incrementPage();
 
-    return this.image;
+    return this.image, this.card;
 
       
     // return data.hits;
