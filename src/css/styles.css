@@ -16,7 +16,8 @@ body {
 
 .search-form {
     display: flex;
-    position: fixed;
+    position: sticky;
+    top: 0;
     justify-content: center;
     font: inherit;
     padding: 8px;
@@ -78,7 +79,6 @@ a {
     border-radius: 10px;
     box-shadow: 6px 6px #ccc, 12px 12px #a3a3a3;
     border: 2px solid gray;
-    background-color: #fafafa;
     text-align: center;
 }
 
